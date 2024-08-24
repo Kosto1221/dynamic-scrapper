@@ -30,5 +30,3 @@ def extarct_berlin_jobs(work):
     }
     all_jobs.append(job_data)
   return all_jobs
-
-extarct_berlin_jobs("python")

@@ -1,18 +1,14 @@
-from extractors.berlin import extarct_berlin_jobs
-from extractors.web3 import extract_web3_jobs
+from flask import Flask, render_template
 
-keyword = input("What do you want to search for?")
+app = Flask("JobScrapper")
 
-berlin = extarct_berlin_jobs(keyword)
-web3 = extract_web3_jobs(keyword)
-jobs = berlin + web3
+@app.route("/")
+def home():
+    return render_template("home.html", name="nico")
 
-file = open(f"{keyword}.csv", "w")
-file.write("Position, Company, Location, Stacks\n")
+@app.route("/hello")
+def hello():
+    return 'hello!'
 
-for job in jobs:
-    file.write(
-        f"{job['position']}, {job['company']}, {job['location']}, {job['stacks']}\n"
-    )
+app.run("0.0.0.0")
 
-file.close()

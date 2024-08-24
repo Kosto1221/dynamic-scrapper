@@ -43,7 +43,3 @@ def extract_jobs(work):
             
         browser.close()
 
-    print(all_jobs)
-
-extract_jobs("python")
-

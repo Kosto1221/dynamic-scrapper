@@ -48,5 +48,3 @@ def extract_web3_jobs(work):
 
         browser.close()
     return all_jobs
-
-extract_web3_jobs("python")
