@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height:100%">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +9,12 @@
         href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     >
 </head>
-<body>
-    <main class=""container>
+<body style="height:100%">
+    <main class="container" style="margin-top:50px; height:100vh">
         <h1>Job Scrapper</h1>
         <h4>What job do you want?</h4>
-        <form action="/search">
-            <input type="text" name="keyword" placeholer="Write keyword please" />
+        <form action="/search" role="search">
+            <input type="search" name="keyword" placeholder="Write keyword please" />
             <button>Search</button>
         </form>
     </main>

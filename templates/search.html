@@ -10,28 +10,35 @@
     >
 </head>
 <body>
-    <main class="container overflow-auto">
-        <h1>Search Results: "{{keyword}}"</h1>
-        <table class="striped">
-            <thead>
-                <tr>
-                    <th>Position</th>
-                    <th>Company</th>
-                    <th>Location</th>
-                    <th>Link</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for job in jobs %}
-                <tr>
-                    <td>{{job.position}}</td>
-                    <td>{{job.company}}</td>
-                    <td>{{job.location}}</td>
-                    <td>{{job.stacks}}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+    <main class="container">
+        <hgroup>
+            <h1>Search Results: {{keyword}} ({{length}})</h1>
+            <a target="_blank" href="/export?keyword={{keyword}}">Export to file</a>
+        </hgroup>
+        <div class="overflow-auto">
+            <table class="striped">
+                <thead data-theme="light">
+                    <tr>
+                        <th>Position</th>
+                        <th>Company</th>
+                        <th>Location</th>
+                        <th>Keywords</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for job in jobs %}
+                    <tr>
+                        <td>{{job.position}}</td>
+                        <td>{{job.company}}</td>
+                        <td>{{job.location}}</td>
+                        <td>{{job.keywords}}</td>
+                        <td>{{job.link}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>       
     </main>
 </body>
 </html>
